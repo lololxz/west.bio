@@ -1,0 +1,159 @@
+/* Estilos Globais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-color: #000000;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+    height: 100vh;
+  }
+  
+  /* Estilos do Canvas */
+  canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+  
+  #canvas1, #canvas2, #canvas3 {
+    display: block;
+  }
+  
+  /* Estilos do Card */
+  .card h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    font-family: 'Courier New', Courier, monospace;
+  }
+  
+  .card p {
+    font-size: 1em;
+    margin-bottom: 15px;
+    
+  }
+  
+
+/* Estilos do avatar */
+.card #avatar {
+    width: 125px;
+    height: 125px;
+    border-radius: 50%;
+    margin-bottom: 15px; /* Aumentei um pouco a margem para dar mais espaço entre a imagem e o título */
+    object-fit: cover; /* Garante que a imagem se ajuste ao tamanho sem distorcer */
+    border: 2px solid #fff; /* Adicionei uma borda branca à imagem */
+}
+
+
+/* Estilo do .card */
+.card {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: transparent;
+    padding: 30px;
+    border-radius: 10px;
+    color: #fff;
+    text-align: center;
+    z-index: 1;
+    max-width: 400px;
+    width: 100%;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estilo do botão */
+.card button {
+    background-color: transparent;
+    color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.5em;
+    padding: 12px 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: opacity 0.3s ease, box-shadow 0.3s ease;
+    margin: 10px 0;
+}
+
+
+/* Estilo dos ícones dentro do botão */
+.card button i {
+    margin: 0 10px;
+    font-size: 2.2em;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-user-drag: none;
+    fill: rgb(255, 255, 255);
+}
+
+.card button a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
+/* Estilo para a bio com animação typewriter */
+.bio {
+    font-family: 'Courier New', Courier, monospace; /* Usando a fonte Courier New */
+    font-size: 1.2em;
+    color: white;
+    margin-top: 2px;
+    white-space: nowrap; /* Impede que o texto quebre linha */
+    overflow: hidden; /* Esconde o texto extra */
+    display: inline-block;
+    width: 0; /* Começa com a largura 0 para esconder o texto inicialmente */
+    border-right:  1px solid white; /* Simula o cursor do tipo "text" */
+    animation: typing 3s steps(20) 1s forwards, erase 3s steps(20) 4s forwards, blinking 0.75s step-end infinite; /* Animações de digitação, apagamento e cursor piscando */
+}
+
+/* Animação de digitação (aparecendo letra por letra) */
+@keyframes typing {
+    0% {
+        width: 0; /* Começa com a largura de 0 */
+    }
+    100% {
+        width: 5ch; /* A largura vai até o final (20 caracteres) */
+    }
+}
+
+/* Animação de apagamento (apagando letra por letra) */
+@keyframes erase {
+    0% {
+        width: 5ch; /* Começa com o texto completo */
+    }
+    100% {
+        width: 0; /* Apaga o texto completamente */
+    }
+}
+
+/* Animação de piscar do cursor (barrinha) */
+@keyframes blinking {
+    0%, 50% {
+        border-right-color: transparent; /* Barrinha invisível */
+    }
+    50%, 100% {
+        border-right-color: white; /* Barrinha visível */
+    }
+}
+
+.music {
+    display: none;
+}
+
+.card #avatar:hover {
+
+    border: 2px solid #ff0000;
+    transform: scale(1.1); 
+    transition: all 0.3s ease;
+}
