@@ -95,13 +95,20 @@
     font-size: 2.2em;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     -webkit-user-drag: none;
-    fill: rgb(255, 255, 255);
+    fill: #919191;
+    color: #919191;
 }
 
 .card button a {
     text-decoration: none;
     color: rgb(255, 255, 255);
 }
+
+.card button i:hover {
+    color: white;
+    transition: all 0.3s ease;
+}
+
 
 /* Estilo para a bio com animação typewriter */
 .bio {
@@ -113,8 +120,8 @@
     overflow: hidden; /* Esconde o texto extra */
     display: inline-block;
     width: 0; /* Começa com a largura 0 para esconder o texto inicialmente */
-    border-right:  1px solid white; /* Simula o cursor do tipo "text" */
-    animation: typing 3s steps(20) 1s forwards, erase 3s steps(20) 4s forwards, blinking 0.75s step-end infinite; /* Animações de digitação, apagamento e cursor piscando */
+    border-right: 1px solid white; /* Simula o cursor do tipo "text" */
+    animation: typing 3s steps(20) infinite, erase 3s steps(20) infinite 3s, blinking 0.75s step-end infinite; /* Animações de digitação, apagamento e cursor piscando */
 }
 
 /* Animação de digitação (aparecendo letra por letra) */
