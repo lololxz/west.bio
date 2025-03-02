@@ -109,50 +109,100 @@
     transition: all 0.3s ease;
 }
 
-
-/* Estilo para a bio com animação typewriter */
-.bio {
-    font-family: 'Courier New', Courier, monospace; /* Usando a fonte Courier New */
-    font-size: 1.2em;
-    color: white;
-    margin-top: 2px;
-    white-space: nowrap; /* Impede que o texto quebre linha */
-    overflow: hidden; /* Esconde o texto extra */
-    display: inline-block;
-    width: 0; /* Começa com a largura 0 para esconder o texto inicialmente */
-    border-right: 1px solid white; /* Simula o cursor do tipo "text" */
-    animation: typing 3s steps(20) infinite, erase 3s steps(20) infinite 3s, blinking 0.75s step-end infinite; /* Animações de digitação, apagamento e cursor piscando */
-}
-
-/* Animação de digitação (aparecendo letra por letra) */
-@keyframes typing {
-    0% {
-        width: 0; /* Começa com a largura de 0 */
-    }
-    100% {
-        width: 5ch; /* A largura vai até o final (20 caracteres) */
-    }
-}
-
-/* Animação de apagamento (apagando letra por letra) */
-@keyframes erase {
-    0% {
-        width: 5ch; /* Começa com o texto completo */
-    }
-    100% {
-        width: 0; /* Apaga o texto completamente */
-    }
-}
-
-/* Animação de piscar do cursor (barrinha) */
-@keyframes blinking {
-    0%, 50% {
-        border-right-color: transparent; /* Barrinha invisível */
-    }
-    50%, 100% {
-        border-right-color: white; /* Barrinha visível */
-    }
-}
+/* Estilo do card */
+.spotify-card {
+    width: 280px;
+    background: #181818;
+    color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    text-align: center;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 350px; /* Ajuste de altura para acomodar todos os elementos */
+  }
+  
+  /* Capa do Álbum */
+  .spotify-card img {
+    width: 100%;
+    height: 200px;
+    border-radius: 10px;
+    object-fit: contain;
+  }
+  
+  /* Título da Música */
+  .spotify-card h2 {
+    font-size: 18px;
+    margin-top: 10px;
+  }
+  
+  /* Nome do Artista */
+  .spotify-card .artist {
+    font-size: 14px;
+    color: #bbb;
+    margin-bottom: 15px;
+  }
+  
+  /* Barra de progresso da música */
+  .progress-container {
+    width: 80%; /* Largura de 80% da tela */
+    height: 8px;
+    background-color: #ddd;
+    border-radius: 5px;
+    margin: 0 auto; /* Centraliza horizontalmente */
+    position: relative;
+  }
+  
+  .progress-bar {
+    height: 100%;
+    background-color: #4caf50;
+    width: 0%; /* Inicialmente a largura é 0% */
+    border-radius: 5px;
+    transition: width 0.1s ease-in-out;
+  }
+  
+  /* Botões Play/Pause */
+  .control-button {
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+    margin-top: 10px; /* Distância do botão de play/pause */
+  }
+  
+  .control-button i {
+    font-size: 30px;
+  }
+  
+  .control-button:focus {
+    outline: none;
+  }
+  
+  /* Controles no rodapé */
+  .spotify-card .controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+  }
+  
+  /* Ajuste do ícone de play/pause */
+  .control-button i {
+    font-size: 30px;
+    transition: all 0.3s ease;
+  }
+  
+  .control-button:focus {
+    outline: none;
+  }
+  
 
 .music {
     display: none;

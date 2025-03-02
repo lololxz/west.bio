@@ -11,6 +11,26 @@
 </head>
 <body>
 
+  <!-- Card de música estilo Spotify -->
+  <div class="spotify-card">
+    <img src="https://images.squarespace-cdn.com/content/v1/58b866f417bffc4dc469acab/1503407866174-HRVG5YI97HGWRU7CNJT4/image-asset.jpeg" alt="Album">
+    <h2>Ivy</h2>
+    <div class="artist">Frank Ocean</div>
+
+   <!-- Barra de progresso -->
+   <div class="progress-container">
+    <div class="progress-bar" id="progressBar"></div>
+  </div>
+
+  <!-- Botão Play/Pause -->
+  <div class="controls">
+    <button class="control-button" id="playPauseBtn">
+      <i class="fa fa-play" id="playIcon"></i>
+      <i class="fa fa-pause" id="pauseIcon" style="display:none;"></i>
+    </button>
+  </div>
+</div>
+
   <audio id="music" loop>
     <source src="Ivy.mp3" type="audio/mpeg">
     Seu navegador não suporta o elemento de áudio.
@@ -245,5 +265,49 @@
     });
 });
   </script>
+
+<script>
+// Elementos do áudio e da barra
+const audio = document.getElementById("music");
+const progressBar = document.querySelector(".progress-bar");
+const progressContainer = document.querySelector(".progress-container");
+
+// Garantir que a barra comece no início quando o áudio estiver pronto
+audio.addEventListener("canplaythrough", () => {
+  // Inicializando a barra de progresso em 0% assim que a música estiver pronta para tocar
+  progressBar.style.width = '0%';
+});
+
+// Evento para atualizar a barra de progresso conforme a música toca
+audio.addEventListener("timeupdate", () => {
+  // A posição da barra de progresso vai ser proporcional ao tempo atual da música
+  if (audio.duration > 0) {
+    const progress = (audio.currentTime / audio.duration) * 100;
+    progressBar.style.width = `${progress}%`;
+  }
+});
+
+// Evento para manipular o controle da barra (permitir avançar ou retroceder)
+progressContainer.addEventListener("click", (e) => {
+  const clickPosition = (e.offsetX / progressContainer.offsetWidth) * audio.duration;
+  audio.currentTime = clickPosition; // Atualiza o tempo da música
+});
+
+// Função de play/pause
+const playPauseButton = document.querySelector(".control-button");
+playPauseButton.addEventListener("click", () => {
+  if (audio.paused) {
+    audio.play();
+    playPauseButton.innerHTML = `<i class="fa fa-pause"></i>`; // Ícone de pause
+  } else {
+    audio.pause();
+    playPauseButton.innerHTML = `<i class="fa fa-play"></i>`; // Ícone de play
+  }
+});
+
+// Ajustando o volume do áudio
+audio.volume = 0.1; // Ajuste do volume
+
+</script>
 </body>
 </html>
