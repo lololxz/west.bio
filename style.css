@@ -203,6 +203,74 @@
     outline: none;
   }
   
+  /* Responsividade para telas menores */
+  @media (max-width: 600px) {
+    .spotify-card {
+      width: 90%; /* Reduz a largura do card para 90% da tela */
+      height: auto; /* Ajusta a altura para se adaptar ao conteúdo */
+      bottom: 10px; /* Coloca o card um pouco mais acima */
+      right: 10px; /* Ajusta a posição para a tela pequena */
+      padding: 10px; /* Reduz o padding */
+    }
+  
+    .spotify-card img {
+      height: 150px; /* Reduz a altura da imagem do álbum */
+    }
+  
+    .spotify-card h2 {
+      font-size: 16px; /* Diminui o tamanho da fonte do título */
+    }
+  
+    .spotify-card .artist {
+      font-size: 12px; /* Diminui o tamanho da fonte do nome do artista */
+    }
+  
+    .progress-container {
+      width: 100%; /* Faz a barra de progresso ocupar toda a largura da tela */
+    }
+  
+    .control-button {
+      font-size: 20px; /* Diminui o tamanho do ícone de play/pause */
+    }
+  
+    .control-button i {
+      font-size: 25px; /* Ajusta o tamanho do ícone de play/pause */
+    }
+  }
+  
+  /* Responsividade para telas muito pequenas (celulares em modo retrato) */
+  @media (max-width: 400px) {
+    .spotify-card {
+      width: 95%; /* Reduz ainda mais a largura do card */
+      padding: 8px; /* Reduz o padding */
+      bottom: 5px; /* Coloca o card mais perto do fundo da tela */
+    }
+  
+    .spotify-card img {
+      height: 120px; /* Ajusta a altura da imagem para telas muito pequenas */
+    }
+  
+    .spotify-card h2 {
+      font-size: 14px; /* Reduz o tamanho do título */
+    }
+  
+    .spotify-card .artist {
+      font-size: 10px; /* Reduz o tamanho do nome do artista */
+    }
+  
+    .progress-container {
+      width: 100%; /* A barra de progresso ocupa toda a largura da tela */
+    }
+  
+    .control-button {
+      font-size: 18px; /* Diminui o tamanho do ícone de play/pause */
+    }
+  
+    .control-button i {
+      font-size: 20px; /* Ajusta o tamanho do ícone de play/pause */
+    }
+  }
+  
 
 .music {
     display: none;
