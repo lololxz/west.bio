@@ -10,7 +10,7 @@
 </head>
 <body>
 
-  <audio controls class="music" id="music" autoplay loop>
+  <audio id="music" loop>
     <source src="ELA VEM, BROTA NO MEU SETOR - MC RODRIGO DO CN ( DJ ZIGAO E FP DO TREM BALA ).mp3" type="audio/mpeg">
     Seu navegador não suporta o elemento de áudio.
 </audio>
@@ -230,10 +230,19 @@
     animloop();
         // Ajustar o volume do áudio para um valor mais baixo (exemplo 0.3)
         document.getElementById('music').volume = 0.1;  // Volume vai de 0 (mudo) a 1 (máximo)
-        window.onload = function() {
-        const audio = document.getElementById('music');
-        audio.play(); // Inicia a música ao carregar a página
-    };
+        document.addEventListener("DOMContentLoaded", function() {
+    const audio = document.getElementById("music");
+    audio.volume = 0.1; // Ajusta o volume
+
+    // Tenta iniciar automaticamente
+    audio.play().catch(() => {
+        // Caso seja bloqueado, adiciona um evento de clique para iniciar a música
+        document.addEventListener("click", function playAudio() {
+            audio.play();
+            document.removeEventListener("click", playAudio); // Remove o evento após tocar
+        });
+    });
+});
   </script>
 </body>
 </html>
