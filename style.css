@@ -232,109 +232,190 @@ display: none;
 
 /* Barra de Progresso */
 .progress-container {
-    width: 60%; /* Ajuste o tamanho da barra de progresso */
-    height: 8px;
-    background-color: #333;
-    border-radius: 5px;
-    position: relative;
+  width: 60%; /* Ajuste o tamanho da barra de progresso */
+  height: 8px;
+  background-color: #333;
+  border-radius: 5px;
+  position: relative;
+  margin: 0 auto; /* Centraliza a barra de progresso */
 }
 
 .progress-bar {
-    height: 100%;
-    background-color: #1db954;
-    width: 0%;
-    border-radius: 5px;
-    transition: width 0.1s ease-in-out;
+  height: 100%;
+  background-color: #1db954;
+  width: 0%;
+  border-radius: 5px;
+  transition: width 0.1s ease-in-out;
 }
+
 /* Botões Gerais (escuros) */
 .spotify-card .button {
-  background: #1e1e1e; /* Fundo escuro para os botões */
-  border: none;
-  padding: 15px;
-  border-radius: 50%;
-  cursor: pointer;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Sombra discreta */
-  transition: transform 0.3s ease;
-  color: #ffffff;
+background: #1e1e1e; /* Fundo escuro para os botões */
+border: none;
+padding: 12px; /* Diminui o tamanho do padding */
+border-radius: 50%;
+cursor: pointer;
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Sombra discreta */
+transition: transform 0.3s ease;
+color: #ffffff;
+font-size: 24px; /* Tamanho da fonte do ícone reduzido */
 }
 
 /* Sem hover, mantendo o mesmo estilo */
 .spotify-card .button:hover {
-  background: #1e1e1e;
-  transform: none;
-  color: #ffffff;
+background: #1e1e1e;
+transform: none;
+color: #ffffff;
 }
 
 /* Sem efeito de clique (active) */
 .spotify-card .button:active {
-  background: #1e1e1e;
-  transform: none;
-  color: #ffffff;
+background: #1e1e1e;
+transform: none;
+color: #ffffff;
 }
 
 /* Remover o contorno ao focar nos botões */
 .spotify-card .button:focus {
-  outline: none;
+outline: none;
 }
 
 /* Controles no Rodapé */
 .spotify-card .controls {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 10px;
-  color: #ffffff;
+display: flex;
+justify-content: center;
+align-items: center;
+margin-top: 10px;
+color: #ffffff;
 }
 
 /* Estilização específica para o botão de Pausar */
 #playPauseBtn {
-  background: #1e1e1e; /* Fundo escuro */
-  border: none;
-  padding: 15px;
-  border-radius: 50%;
-  cursor: pointer;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Sombra discreta */
-  transition: transform 0.3s ease;
+background: #1e1e1e; /* Fundo escuro */
+border: none;
+padding: 12px; /* Diminui o tamanho do padding */
+border-radius: 50%;
+cursor: pointer;
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Sombra discreta */
+transition: transform 0.3s ease;
+font-size: 28px; /* Tamanho do ícone ajustado */
 }
 
 /* Estilizando os ícones dentro do botão Play/Pause */
 #pauseIcon, #playIcon {
-  color: white; /* Cor do ícone */
-  font-size: 32px; /* Tamanho do ícone */
+color: white; /* Cor do ícone */
+font-size: 28px; /* Tamanho do ícone */
 }
 
 /* Efeito de hover para os ícones */
 #pauseIcon:hover i, #pauseIcon:hover  {
-  color: white; /* Mantém a cor branca */
-  transform: scale(1.2); /* Aumenta o tamanho do ícone */
+color: white; /* Mantém a cor branca */
+transform: scale(1.2); /* Aumenta o tamanho do ícone */
 }
 
 /* Efeito de hover para os ícones */
 #playIcon:hover i, #playIcon:hover i {
-  color: white; /* Mantém a cor branca */
-  transform: scale(1.2); /* Aumenta o tamanho do ícone */
+color: white; /* Mantém a cor branca */
+transform: scale(1.2); /* Aumenta o tamanho do ícone */
 }
 
 /* Estilização para o botão Skip Forward */
 #skipForward, #skipBackward {
-  background: #1e1e1e; /* Fundo escuro */
-  border: none;
-  padding: 15px;
-  border-radius: 50%;
-  cursor: pointer;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Sombra discreta */
-  transition: transform 0.3s ease;
+background: #1e1e1e; /* Fundo escuro */
+border: none;
+padding: 12px; /* Diminui o tamanho do padding */
+border-radius: 50%;
+cursor: pointer;
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Sombra discreta */
+transition: transform 0.3s ease;
 }
 
 /* Estilizando os ícones dentro dos botões Skip */
 #skipForward i, #skipBackward i {
-  color: white; /* Cor dos ícones */
-  font-size: 28px; /* Tamanho do ícone */
-  transition: transform 0.3s ease;
+color: white; /* Cor dos ícones */
+font-size: 26px; /* Tamanho do ícone ajustado */
+transition: transform 0.3s ease;
 }
 
 /* Efeito de hover para os ícones */
 #skipForward:hover i, #skipBackward:hover i {
-  color: white; /* Mantém a cor branca */
-  transform: scale(1.2); /* Aumenta o tamanho do ícone */
+color: white; /* Mantém a cor branca */
+transform: scale(1.2); /* Aumenta o tamanho do ícone */
+}
+
+/* Responsividade para dispositivos móveis */
+@media screen and (max-width: 768px) {
+.card {
+  top: 30%; /* Move o card para cima em telas menores */
+  transform: translate(-50%, -30%); /* Ajusta a posição */
+}
+
+.spotify-card {
+  width: 250px;
+  height: 300px;
+}
+
+.spotify-card img {
+  height: 150px;
+}
+
+.spotify-card h2 {
+  font-size: 16px;
+}
+
+.language-icons i {
+  font-size: 25px;
+}
+
+.social-icons i {
+  font-size: 2em;
+}
+
+#toast {
+  font-size: 14px;
+  height: 40px;
+}
+
+/* Barra de progresso em telas pequenas */
+.progress-container {
+  width: 50%; /* Diminui a largura da barra de progresso */
+}
+}
+
+@media screen and (max-width: 480px) {
+.card {
+  top: 20%; /* Move ainda mais o card para cima */
+  transform: translate(-50%, -20%); /* Ajusta ainda mais a posição */
+}
+
+.spotify-card {
+  width: 200px;
+  height: 250px;
+}
+
+.spotify-card img {
+  height: 120px;
+}
+
+.spotify-card h2 {
+  font-size: 14px;
+}
+
+.language-icons i {
+  font-size: 20px;
+}
+
+.social-icons i {
+  font-size: 1.8em;
+}
+
+#toast {
+  font-size: 12px;
+  height: 35px;
+}
+
+/* Barra de progresso em telas muito pequenas */
+.progress-container {
+  width: 40%; /* Diminui ainda mais a largura da barra de progresso */
+}
 }
