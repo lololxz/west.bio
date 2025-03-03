@@ -368,7 +368,7 @@ transform: scale(1.2); /* Aumenta o tamanho do ícone */
 }
 
 .social-icons i {
-  font-size: 2em;
+  font-size: 1em;
 }
 
 #toast {
