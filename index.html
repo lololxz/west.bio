@@ -23,14 +23,27 @@
     <div class="progress-bar" id="progressBar"></div>
   </div>
 
+
   <!-- Botão Play/Pause -->
   <div class="controls">
-    <button class="control-button" id="playPauseBtn">
-      <i class="fa fa-play" id="playIcon"></i>
-      <i class="fa fa-pause" id="pauseIcon" style="display:none;"></i>
-    </button>
+    <button class="control-button" id="skipBackward">
+      <i class="fa fa-backward"></i>
+  </button>
+  <button class="control-button" id="playPauseBtn">
+    <i class="fa fa-play" id="playIcon"></i>
+    <i class="fa fa-pause" id="pauseIcon" style="display:none;"></i>
+  </button>
+  <button class="control-button" id="skipForward">
+      <i class="fa fa-forward"></i>
+  </button>
   </div>
 </div>
+
+<!-- Controles de Música -->
+<div class="controls">
+  
+</div>
+
 
 <audio id="music" loop>
   <source src="Ivy.mp3" type="audio/mpeg">
@@ -42,7 +55,7 @@
   <img src="5.gif" alt="Avatar" id="avatar">
   <h2>lolo</h2>
   <!-- Toast que aparece no topo -->
-<div id="toast"><p>Veja os Projetos no GitHub!🚀</p></div>
+<div id="toast"><p>Veja os Projetos no GitHub!</p></div>
   <!-- Ícones das linguagens HTML, CSS, JavaScript -->
   <div class="language-icons">
       <i class="fa-brands fa-html5"></i>
@@ -266,22 +279,91 @@
   }
   animloop();
   
-  // Ajustar o volume do áudio para um valor mais baixo (exemplo 0.3)
-  document.getElementById('music').volume = 0.1;  // Volume vai de 0 (mudo) a 1 (máximo)
-
-  // Tenta iniciar automaticamente a música ao clicar
-  document.addEventListener("DOMContentLoaded", function() {
+  document.addEventListener("DOMContentLoaded", function () {
     const audio = document.getElementById("music");
-    audio.volume = 0.1; // Ajusta o volume
+    const playPauseBtn = document.getElementById("playPauseBtn");
+    const playIcon = document.getElementById("playIcon");
+    const pauseIcon = document.getElementById("pauseIcon");
+    const progressBar = document.getElementById("progressBar");
+    const skipForwardBtn = document.getElementById("skipForward");
+    const skipBackwardBtn = document.getElementById("skipBackward");
+    const songTitle = document.querySelector(".spotify-card h2");
+    const songArtist = document.querySelector(".spotify-card .artist");
+    const albumCover = document.querySelector(".spotify-card img");
 
-    audio.play().catch(() => {
-      document.addEventListener("click", function playAudio() {
-        audio.play();
-        document.removeEventListener("click", playAudio);
-      });
+    let currentSongIndex = 0;
+
+    // Lista de músicas
+    const playlist = [
+        {
+            title: "Ivy",
+            artist: "Frank Ocean",
+            src: "Ivy.mp3",
+            cover: "https://images.squarespace-cdn.com/content/v1/58b866f417bffc4dc469acab/1503407866174-HRVG5YI97HGWRU7CNJT4/image-asset.jpeg"
+        },
+        {
+            title: "Japanese Denim",
+            artist: "Daniel Caesar",
+            src: "Japanese Denim.mp3",
+            cover: "https://imgs.search.brave.com/oj7rbdReIWkoJrdvH-1lmfVS_eAjYJtG-TaTuzYfAXc/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NzFXTUxEMElFaUwu/anBn"
+        },
+        {
+            title: "Superpower",
+            artist: "Daniel Caesar",
+            src: "Superpowers.mp3",
+            cover: "https://imgs.search.brave.com/dzKezlh8efSSvdf9ZgQGnzr_i49gLtLuZvl0m4wIDsQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pMS5z/bmRjZG4uY29tL2Fy/dHdvcmtzLTlWRTRB/cThwVkNEUy0wLXQx/MDgweDEwODAuanBn"
+        }
+    ];
+
+    function loadSong(index) {
+        if (index >= 0 && index < playlist.length) {
+            currentSongIndex = index;
+            audio.src = playlist[index].src;
+            songTitle.textContent = playlist[index].title;
+            songArtist.textContent = playlist[index].artist;
+            albumCover.src = playlist[index].cover;
+            audio.play();
+            playIcon.style.display = "none";
+            pauseIcon.style.display = "inline";
+        }
+    }
+
+    playPauseBtn.addEventListener("click", function () {
+        if (audio.paused) {
+            audio.play();
+            playIcon.style.display = "none";
+            pauseIcon.style.display = "inline";
+        } else {
+            audio.pause();
+            playIcon.style.display = "inline";
+            pauseIcon.style.display = "none";
+        }
     });
-  });
 
+    skipForwardBtn.addEventListener("click", function () {
+        let nextIndex = (currentSongIndex + 1) % playlist.length; // Vai para a próxima música
+        loadSong(nextIndex);
+    });
+
+    skipBackwardBtn.addEventListener("click", function () {
+        let prevIndex = (currentSongIndex - 1 + playlist.length) % playlist.length; // Volta para a música anterior
+        loadSong(prevIndex);
+    });
+
+    audio.addEventListener("timeupdate", function () {
+        if (audio.duration) {
+            const progress = (audio.currentTime / audio.duration) * 100;
+            progressBar.style.width = `${progress}%`;
+        }
+    });
+
+    audio.addEventListener("ended", function () {
+        skipForwardBtn.click(); // Quando acabar, vai para a próxima música automaticamente
+    });
+
+    // Carrega a primeira música
+    loadSong(currentSongIndex);
+});
 
 </script>
 <script>
@@ -298,6 +380,14 @@ function showToast() {
     toast.classList.remove('show');
   }, 3500);
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+    const audio = document.getElementById("music");
+
+    // Definir o volume da música (de 0 a 1)
+    audio.volume = 0.1; // Volume baixo, ajuste conforme necessário
+});
+
 
 // Adicionando um evento de clique a cada ícone
 languageIcons.forEach(icon => {
