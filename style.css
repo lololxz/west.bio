@@ -1,318 +1,340 @@
 /* Estilos Globais */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    background-color: #000000;
-    color: #fff;
-    font-family: Arial, sans-serif;
-    overflow: hidden;
-    height: 100vh;
-  }
-  
-  /* Estilos do Canvas */
-  canvas {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-  }
-  
-  #canvas1, #canvas2, #canvas3 {
-    display: block;
-  }
-  
-  /* Estilos do Card */
-  .card h2 {
-    font-size: 1.5em;
-    margin-bottom: 10px;
-    font-family: 'Courier New', Courier, monospace;
-  }
-  
-  .card p {
-    font-size: 1em;
-    margin-bottom: 15px;
-    
-  }
-  
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #000000;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+  height: 100vh;
+}
+
+/* Estilos do Canvas */
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+#canvas1, #canvas2, #canvas3 {
+  display: block;
+}
+
+/* Estilos do Card */
+.card h2 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.card p {
+  font-size: 1em;
+  margin-bottom: 15px;
+}
 
 /* Estilos do avatar */
 .card #avatar {
-    width: 125px;
-    height: 125px;
-    border-radius: 50%;
-    margin-bottom: 15px; /* Aumentei um pouco a margem para dar mais espaço entre a imagem e o título */
-    object-fit: cover; /* Garante que a imagem se ajuste ao tamanho sem distorcer */
-    border: 2px solid #fff; /* Adicionei uma borda branca à imagem */
+  width: 125px;
+  height: 125px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  object-fit: cover;
+  border: 2px solid #fff;
 }
 
 .music {
-  display: none;
+display: none;
 }
 
 .card #avatar:hover {
-
   border: 2px solid #ff0000;
   transform: scale(1.1); 
   transition: all 0.3s ease;
 }
 
-
 /* Estilo do .card */
 .card {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: transparent;
-    padding: 30px;
-    border-radius: 10px;
-    color: #fff;
-    text-align: center;
-    z-index: 1;
-    max-width: 400px;
-    width: 100%;
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: transparent;
+  padding: 30px;
+  border-radius: 10px;
+  color: #fff;
+  text-align: center;
+  z-index: 1;
+  max-width: 400px;
+  width: 100%;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-/* Estilo do botão */
-.card button {
-    background-color: transparent;
-    color: rgb(255, 255, 255);
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1.5em;
-    padding: 12px 25px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    transition: opacity 0.3s ease, box-shadow 0.3s ease;
-    margin: 10px 0;
+/* Estilo dos ícones das linguagens */
+.language-icons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 10px; /* Adiciona espaço entre a imagem e os ícones das linguagens */
+  margin-bottom: 20px; /* Adiciona espaço entre os ícones das linguagens e os sociais */
 }
 
-
-/* Estilo dos ícones dentro do botão */
-.card button i {
-    margin: 0 10px;
-    font-size: 2.2em;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    -webkit-user-drag: none;
-    fill: #919191;
-    color: #919191;
+/* Estilos para os ícones das linguagens */
+.language-icons i {
+  font-size: 30px;
+  color: white; /* Garantir que o ícone tenha cor branca */
+  transition: transform 0.3s ease, text-shadow 0.3s ease;
+  background: transparent; /* Remover qualquer fundo */
+  padding: 5px; /* Adiciona um pouco de espaço interno */
+  border-radius: 5px; /* Borda arredondada */
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.7); /* Efeito de brilho suave */
 }
 
-.card button a {
-    text-decoration: none;
-    color: rgb(255, 255, 255);
+/* Efeito de brilho quando passar o mouse */
+.language-icons i:hover {
+  transform: scale(1.2); /* Aumenta o ícone */
+  text-shadow: 0 0 20px rgba(255, 255, 255, 1); /* Brilho mais forte ao passar o mouse */
 }
 
-.card button i:hover {
-    color: white;
-    transition: all 0.3s ease;
+/* Estilo dos ícones de redes sociais */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.social-icons a {
+  color: white;
+  font-size: 2.5em;
+  text-decoration: none;
+}
+
+.social-icons i {
+  transition: transform 0.3s ease, text-shadow 0.3s ease;
+}
+
+/* Efeito de brilho nos ícones das redes sociais */
+.social-icons a i {
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.7); /* Brilho suave */
+}
+
+/* Efeito ao passar o mouse nos ícones das redes sociais */
+.social-icons a:hover i {
+  transform: scale(1.2); /* Aumenta o ícone quando passar o mouse */
+  text-shadow: 0 0 20px rgba(255, 255, 255, 1); /* Brilho mais forte ao passar o mouse */
+}
+
+/* Estilos para o Toast */
+#toast {
+  visibility: hidden;
+  min-width: 250px;
+  height: 50px;
+  background-color: transparent; /* Cinza escuro mais suave */
+  color: #fff; /* Texto branco */
+  text-align: center;
+  font-size: 16px;
+  padding: 12px;
+  position: fixed;
+  z-index: 1000; /* Fica acima de todos os elementos */
+  left: 50%;
+  top: -10px; /* Posição ajustada para um pouco acima da foto */
+  transform: translateX(-50%); /* Centraliza a Toast horizontalmente */
+  border-radius: 8px; /* Bordas suavemente arredondadas */
+  opacity: 0; /* Começa invisível */
+  transition: opacity 0.3s ease, top 0.3s ease; /* Transição suave */
+}
+
+/* Estilos do texto */
+#toast p {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: normal; /* Texto em peso normal para um visual mais formal */
+}
+
+/* Quando a classe 'show' for adicionada, o Toast aparece */
+#toast.show {
+  visibility: visible;
+  opacity: 1;
+  top: -25px; /* Posiciona a Toast no topo da tela */
+}
+
+/* Quando a classe 'hide' for adicionada, o Toast desaparece */
+#toast.hide {
+  opacity: 0;
+  top: 80px;
+}
+
+/* Efeito de brilho sutil ao passar o mouse sobre o Toast */
+#toast:hover {
+  box-shadow: none; /* Remove a sombra no hover */
+  background-color: #333; /* Sutil mudança de cor no hover */
 }
 
 /* Estilo do card */
 .spotify-card {
-  width: 280px;
-  background: #181818;
-  color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  padding: 15px;
-  text-align: center;
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 1000;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  height: 350px; /* Ajuste de altura para acomodar todos os elementos */
+width: 280px;
+background: #181818;
+color: #fff;
+border-radius: 10px;
+box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+padding: 15px;
+text-align: center;
+position: fixed;
+bottom: 20px;
+right: 20px;
+z-index: 1000;
+display: flex;
+flex-direction: column;
+justify-content: flex-start;
+height: 350px;
 }
 
 /* Capa do Álbum */
 .spotify-card img {
-  width: 100%;
-  height: 200px;
-  border-radius: 10px;
-  object-fit: contain;
+width: 100%;
+height: 200px;
+border-radius: 10px;
+object-fit: contain;
 }
 
 /* Título da Música */
 .spotify-card h2 {
-  font-size: 18px;
-  margin-top: 10px;
+font-size: 18px;
+margin-top: 10px;
 }
 
 /* Nome do Artista */
 .spotify-card .artist {
-  font-size: 14px;
-  color: #bbb;
-  margin-bottom: 15px;
+font-size: 14px;
+color: #bbb;
+margin-bottom: 15px;
 }
 
 /* Animação para a bio */
 .bio {
-  font-family: 'Courier New', Courier, monospace; /* Usando a fonte Courier New */
-  font-size: 1.2em;
-  color: white;
-  margin-top: 2px;
-  white-space: nowrap; /* Impede que o texto quebre linha */
-  overflow: hidden; /* Esconde o texto extra */
-  display: inline-block;
-  width: 0; /* Começa com a largura 0 para esconder o texto inicialmente */
-  border-right: 1px solid white; /* Simula o cursor do tipo "text" */
-  animation: typing 3s steps(20) infinite, erase 3s steps(20) infinite 3s, blinking 0.75s step-end infinite; /* Animações de digitação, apagamento e cursor piscando */
-}
-
-/* Animação de digitação (aparecendo letra por letra) */
-@keyframes typing {
-  0% {
-    width: 5ch; /* Começa com a largura de 0 */
-  }
-  100% {
-    width: 100%; /* A largura vai até o final (20 caracteres) */
-  }
-}
-
-/* Animação de apagamento (apagando letra por letra) */
-@keyframes erase {
-  0% {
-    width: 5ch; /* Começa com o texto completo */
-  }
-  100% {
-    width: 0; /* Apaga o texto completamente */
-  }
-}
-
-/* Animação de piscar do cursor (barrinha) */
-@keyframes blinking {
-  0%, 50% {
-    border-right-color: transparent; /* Barrinha invisível */
-  }
-  50%, 100% {
-    border-right-color: white; /* Barrinha visível */
-  }
+font-family: 'Courier New', Courier, monospace;
+font-size: 1.2em;
+color: white;
+margin-top: 2px;
+display: inline-block;
 }
 
 /* Barra de progresso da música */
 .progress-container {
-  width: 80%; /* Largura de 80% da tela */
-  height: 8px;
-  background-color: #ddd;
-  border-radius: 5px;
-  margin: 0 auto; /* Centraliza horizontalmente */
-  position: relative;
+width: 80%;
+height: 8px;
+background-color: #ddd;
+border-radius: 5px;
+margin: 0 auto;
+position: relative;
 }
 
 .progress-bar {
-  height: 100%;
-  background-color: #4caf50;
-  width: 0%; /* Inicialmente a largura é 0% */
-  border-radius: 5px;
-  transition: width 0.1s ease-in-out;
+height: 100%;
+background-color: #4caf50;
+width: 0%;
+border-radius: 5px;
+transition: width 0.1s ease-in-out;
 }
 
 /* Botões Play/Pause */
 .control-button {
-  background: transparent;
-  border: none;
-  color: #fff;
-  font-size: 24px;
-  cursor: pointer;
-  margin-top: 10px; /* Distância do botão de play/pause */
+background: transparent;
+border: none;
+color: #fff;
+font-size: 24px;
+cursor: pointer;
+margin-top: 10px;
 }
 
 .control-button i {
-  font-size: 30px;
+font-size: 30px;
 }
 
 .control-button:focus {
-  outline: none;
+outline: none;
 }
 
 /* Controles no rodapé */
 .spotify-card .controls {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 10px;
+display: flex;
+justify-content: center;
+align-items: center;
+margin-top: 10px;
 }
 
 /* Responsividade para telas menores */
 @media (max-width: 600px) {
-  .spotify-card {
-    width: 90%; /* Reduz a largura do card para 90% da tela */
-    height: auto; /* Ajusta a altura para se adaptar ao conteúdo */
-    bottom: 10px; /* Coloca o card um pouco mais acima */
-    right: 10px; /* Ajusta a posição para a tela pequena */
-    padding: 10px; /* Reduz o padding */
-  }
-
-  .spotify-card img {
-    height: 150px; /* Reduz a altura da imagem do álbum */
-  }
-
-  .spotify-card h2 {
-    font-size: 16px; /* Diminui o tamanho da fonte do título */
-  }
-
-  .spotify-card .artist {
-    font-size: 12px; /* Diminui o tamanho da fonte do nome do artista */
-  }
-
-  .progress-container {
-    width: 100%; /* Faz a barra de progresso ocupar toda a largura da tela */
-  }
-
-  .control-button {
-    font-size: 20px; /* Diminui o tamanho do ícone de play/pause */
-  }
-
-  .control-button i {
-    font-size: 25px; /* Ajusta o tamanho do ícone de play/pause */
-  }
+.spotify-card {
+  width: 90%;
+  height: auto;
+  bottom: 10px;
+  right: 10px;
+  padding: 10px;
 }
 
-/* Responsividade para telas muito pequenas (celulares em modo retrato) */
+.spotify-card img {
+  height: 150px;
+}
+
+.spotify-card h2 {
+  font-size: 16px;
+}
+
+.spotify-card .artist {
+  font-size: 12px;
+}
+
+.progress-container {
+  width: 100%;
+}
+
+.control-button {
+  font-size: 20px;
+}
+
+.control-button i {
+  font-size: 25px;
+}
+}
+
+/* Responsividade para telas muito pequenas */
 @media (max-width: 400px) {
-  .spotify-card {
-    width: 95%; /* Reduz ainda mais a largura do card */
-    padding: 8px; /* Reduz o padding */
-    bottom: 5px; /* Coloca o card mais perto do fundo da tela */
-  }
-
-  .spotify-card img {
-    height: 120px; /* Ajusta a altura da imagem para telas muito pequenas */
-  }
-
-  .spotify-card h2 {
-    font-size: 14px; /* Reduz o tamanho do título */
-  }
-
-  .spotify-card .artist {
-    font-size: 10px; /* Reduz o tamanho do nome do artista */
-  }
-
-  .progress-container {
-    width: 100%; /* A barra de progresso ocupa toda a largura da tela */
-  }
-
-  .control-button {
-    font-size: 18px; /* Diminui o tamanho do ícone de play/pause */
-  }
-
-  .control-button i {
-    font-size: 20px; /* Ajusta o tamanho do ícone de play/pause */
-  }
+.spotify-card {
+  width: 95%;
+  padding: 8px;
+  bottom: 5px;
 }
 
+.spotify-card img {
+  height: 120px;
+}
+
+.spotify-card h2 {
+  font-size: 14px;
+}
+
+.spotify-card .artist {
+  font-size: 10px;
+}
+
+.progress-container {
+  width: 100%;
+}
+
+.control-button {
+  font-size: 18px;
+}
+
+.control-button i {
+  font-size: 20px;
+}
+}
