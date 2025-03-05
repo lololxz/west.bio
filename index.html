@@ -11,20 +11,15 @@
 </head>
 <body>
 
-
-<!-- Card de música estilo Spotify -->
 <div class="spotify-card">
   <img src="https://images.squarespace-cdn.com/content/v1/58b866f417bffc4dc469acab/1503407866174-HRVG5YI97HGWRU7CNJT4/image-asset.jpeg" alt="Album">
   <h2>Ivy</h2>
   <div class="artist">Frank Ocean</div>
 
-  <!-- Barra de progresso -->
   <div class="progress-container">
     <div class="progress-bar" id="progressBar"></div>
   </div>
 
-
-  <!-- Botão Play/Pause -->
   <div class="controls">
     <button class="control-button" id="skipBackward">
       <i class="fa fa-backward"></i>
@@ -39,31 +34,22 @@
   </div>
 </div>
 
-<!-- Controles de Música -->
-<div class="controls">
-  
-</div>
-
-
 <audio id="music" loop>
   <source src="Ivy.mp3" type="audio/mpeg">
   Seu navegador não suporta o elemento de áudio.
 </audio>
 
-<!-- Card com o conteúdo desejado -->
 <div class="card">
   <img src="5.gif" alt="Avatar" id="avatar">
   <h2>lolo</h2>
   <!-- Toast que aparece no topo -->
 <div id="toast"><p>Veja os Projetos no GitHub!</p></div>
-  <!-- Ícones das linguagens HTML, CSS, JavaScript -->
   <div class="language-icons">
       <i class="fa-brands fa-html5"></i>
       <i class="fa-brands fa-css3-alt"></i>
       <i class="fa-brands fa-js-square"></i>
   </div>
 
-  <!-- Ícones de Redes Sociais -->
   <div class="social-icons">
       <a href="https://instagram.com/lolo.lxz" target="_blank">
           <i class="fa-brands fa-instagram"></i>
@@ -77,7 +63,6 @@
   </div>
 </div>
 
-<!-- Script da animação -->
 <script>
   var canvas1 = document.createElement("canvas");
   var canvas2 = document.createElement("canvas");
@@ -259,7 +244,7 @@
     if (lightTimeCurrent >= lightTimeTotal) {
       createLightning();
       lightTimeCurrent = 0;
-      lightTimeTotal = 200;  //rand(100, 200)
+      lightTimeTotal = 200; 
     }
     drawLightning();
   }
@@ -341,12 +326,12 @@
     });
 
     skipForwardBtn.addEventListener("click", function () {
-        let nextIndex = (currentSongIndex + 1) % playlist.length; // Vai para a próxima música
+        let nextIndex = (currentSongIndex + 1) % playlist.length; 
         loadSong(nextIndex);
     });
 
     skipBackwardBtn.addEventListener("click", function () {
-        let prevIndex = (currentSongIndex - 1 + playlist.length) % playlist.length; // Volta para a música anterior
+        let prevIndex = (currentSongIndex - 1 + playlist.length) % playlist.length; 
         loadSong(prevIndex);
     });
 
@@ -358,24 +343,20 @@
     });
 
     audio.addEventListener("ended", function () {
-        skipForwardBtn.click(); // Quando acabar, vai para a próxima música automaticamente
+        skipForwardBtn.click(); 
     });
 
-    // Carrega a primeira música
     loadSong(currentSongIndex);
 });
 
 </script>
 <script>
-// Obtendo todos os ícones de linguagem
 const languageIcons = document.querySelectorAll('.language-icons i');
 
-// Função para mostrar a mensagem
 function showToast() {
   const toast = document.getElementById('toast');
   toast.classList.add('show');
   
-  // Esconde a mensagem após 3.5 segundos
   setTimeout(() => {
     toast.classList.remove('show');
   }, 3500);
@@ -384,15 +365,12 @@ function showToast() {
 document.addEventListener("DOMContentLoaded", function () {
     const audio = document.getElementById("music");
 
-    // Definir o volume da música (de 0 a 1)
-    audio.volume = 0.1; // Volume baixo, ajuste conforme necessário
+    audio.volume = 0.1; 
 });
 
-
-// Adicionando um evento de clique a cada ícone
 languageIcons.forEach(icon => {
   icon.addEventListener('click', () => {
-    showToast(); // Exibe a toast message
+    showToast(); 
   });
 });
 
