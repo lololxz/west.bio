@@ -137,27 +137,16 @@ display: none;
   position: fixed;
   bottom: -25px;
   right: calc(50% - 80px);
-  background: linear-gradient(45deg, #1e1e1e, #333333); 
+  background: #000000;
   border: none;
   padding: 15px 25px; 
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); 
-  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease; 
   color: #ffffff;
   font-size: 24px;
   border-radius: 50px; 
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.social-icons p:hover {
-  background: linear-gradient(45deg, #333333, #1e1e1e); 
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); 
-  transform: translateY(-5px); 
-}
-
-.social-icons p:active {
-  transform: translateY(2px); 
 }
 
 #toast {
