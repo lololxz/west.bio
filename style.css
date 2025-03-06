@@ -99,8 +99,8 @@ display: none;
 
 .social-icons {
   position: fixed;
-  bottom: -200px;
-  left: -750px;
+  bottom: -75px;
+  left: px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -122,7 +122,7 @@ display: none;
 
 .social-icons a i {
   text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
-  font-size: 2.2em;
+  font-size: 2em;
   color: white;
   transition: transform 0.3s ease, text-shadow 0.3s ease;
 
@@ -135,8 +135,8 @@ display: none;
 
 .social-icons p {
   position: fixed;
-  bottom: -150px;
-  left: -750px;
+  bottom: -25px;
+  right: calc(50% - 80px);
   background: linear-gradient(45deg, #1e1e1e, #333333); 
   border: none;
   padding: 15px 25px; 
@@ -347,75 +347,103 @@ transform: scale(1.2);
 }
 
 @media screen and (max-width: 768px) {
-.card {
-  top: 30%; 
-  transform: translate(-50%, -30%); 
-}
+  .card {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 
-.spotify-card {
-  width: 250px;
-  height: 300px;
-}
+  .spotify-card {
+    width: 90%;
+    max-width: 280px;
+    height: auto;
+    padding: 10px;
+    text-align: center;
+  }
 
-.spotify-card img {
-  height: 150px;
-}
+  .spotify-card img {
+    height: auto;
+    max-width: 100%;
+  }
 
-.spotify-card h2 {
-  font-size: 16px;
-}
+  .spotify-card h2 {
+    font-size: 18px;
+  }
 
-.language-icons i {
-  font-size: 1.5em;
-}
+  .language-icons i, .social-icons i {
+    font-size: 1.5em;
+  }
 
-.social-icons i {
-  font-size: 1.6em;
-}
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    gap: 15px;
+  }
 
-#toast {
-  font-size: 14px;
-  height: 40px;
-}
+  #toast {
+    font-size: 14px;
+    height: 40px;
+  }
 
-.progress-container {
-  width: 50%; 
-}
+  .progress-container {
+    width: 60%;
+  }
 }
 
 @media screen and (max-width: 480px) {
-.card {
-  top: 20%; 
-  transform: translate(-50%, -20%); 
-}
+  .card {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 
-.spotify-card {
-  width: 200px;
-  height: 250px;
-}
+  .spotify-card {
+    width: 90%;
+    max-width: 220px;
+    height: auto;
+    padding: 8px;
+    text-align: center;
+  }
 
-.spotify-card img {
-  height: 120px;
-}
+  .spotify-card img {
+    height: auto;
+    max-width: 100%;
+  }
 
-.spotify-card h2 {
-  font-size: 14px;
-}
+  .spotify-card h2 {
+    font-size: 16px;
+  }
 
-.language-icons i {
-  font-size: 20px;
-}
+  .language-icons i, .social-icons i {
+    font-size: 1.2em;
+  }
 
-.social-icons i {
-  font-size: 1em;
-}
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    position: fixed;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    gap: 10px;
+  }
 
-#toast {
-  font-size: 12px;
-  height: 35px;
-}
+  #toast {
+    font-size: 12px;
+    height: 35px;
+  }
 
-.progress-container {
-  width: 40%; 
-}
+  .progress-container {
+    width: 50%;
+  }
 }
